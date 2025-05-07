@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>NightShade | Skills</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https=//fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #000000, #0a0a0a);
+      color: #00ffee;
+      padding: 40px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      color: #00aaff;
+      text-shadow: 0 0 10px #00ffee88;
+    }
+
+    .skill-section {
+      max-width: 800px;
+      margin: 0 auto 50px;
+    }
+
+    .section-title {
+      font-size: 1.5em;
+      color: #00ffee;
+      margin-bottom: 20px;
+      text-shadow: 0 0 5px #00ffee66;
+    }
+
+    .skill {
+      margin-bottom: 20px;
+    }
+
+    .skill-name {
+      margin-bottom: 5px;
+      font-size: 1.1em;
+    }
+
+    .progress-bar-container {
+      background-color: #0f0f0f;
+      border-radius: 5px;
+      overflow: hidden;
+      border: 1px solid #00ffee33;
+    }
+
+    .progress-bar {
+  height: 20px;
+  background: linear-gradient(90deg, #00ffee, #00aaff);
+  transition: width 1.2s ease-in-out;
+  box-shadow: 0 0 10px #00ffeeaa;
+}
+
+
+    .back-btn {
+      display: block;
+      text-align: center;
+      margin: 40px auto 0;
+      text-decoration: none;
+      color: #00ffee;
+      border: 1px solid #00ffee;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      width: fit-content;
+    }
+
+    .back-btn:hover {
+      background-color: #00ffee;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Skills of NightShade</h1>
+  </header>
+
+  <!-- Web Dev Skills -->
+  <section class="skill-section">
+    <div class="section-title">🌐 Web Development</div>
+    <div class="skill">
+      <div class="skill-name">HTML</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="95%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">CSS</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="90%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">JavaScript</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">React</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="70%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Node.js</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="65%"></div></div>
+    </div>
+  </section>
+
+  <!-- Game Dev Skills -->
+  <section class="skill-section">
+    <div class="section-title">🎮 Game Development</div>
+    <div class="skill">
+      <div class="skill-name">Unity</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="80%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">C#</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="85%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Godot</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="60%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">GDScript</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="60%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Pixel Art</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="50%"></div></div>
+    </div>
+  </section>
+
+  <!-- Tools -->
+  <section class="skill-section">
+    <div class="section-title">🛠 Tools & Extras</div>
+    <div class="skill">
+      <div class="skill-name">Git</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="75%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">VS Code</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="95%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Figma</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="60%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Electron</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="40%"></div></div>
+    </div>
+    <div class="skill">
+      <div class="skill-name">Blender</div>
+      <div class="progress-bar-container"><div class="progress-bar" data-width="30%"></div></div>
+    </div>
+  </section>
+
+  <a href="home.html" class="back-btn">← Back to Home</a>
+</body>
+
+<script>
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const bar = entry.target;
+          const targetWidth = bar.getAttribute('data-width');
+          bar.style.width = targetWidth;
+          observer.unobserve(bar); // run only once
+        }
+      });
+    }, {
+      threshold: 0.4
+    });
+  
+    document.querySelectorAll('.progress-bar').forEach(bar => {
+      bar.style.width = '0'; // hide initially
+      observer.observe(bar);
+    });
+  </script>
+  
+</html>

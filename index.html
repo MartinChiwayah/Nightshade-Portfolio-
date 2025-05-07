@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NightShade - Loading</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: radial-gradient(ellipse at center, #0f0f0f 0%, #000000 100%);
+      color: #00ffee;
+      font-family: 'Orbitron', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      text-align: center;
+      padding: 0 5vw;
+    }
+    .loader-container {
+      animation: fadeIn 2s ease-in-out;
+    }
+    h1 {
+      font-size: 8vw;
+      letter-spacing: 0.4em;
+      margin-bottom: 5vh;
+    }
+    .loader {
+      width: 60vw;
+      max-width: 300px;
+      height: 6px;
+      background: #222;
+      margin: auto;
+      overflow: hidden;
+      position: relative;
+      border-radius: 4px;
+    }
+    .loader::before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 50%;
+      background: linear-gradient(90deg, #00ffee, #00aaff);
+      animation: load 2s infinite;
+    }
+    @keyframes load {
+      0% { left: -50%; }
+      50% { left: 100%; }
+      100% { left: -50%; }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="loader-container">
+    <h1>NightShade</h1>
+    <div class="loader"></div>
+  </div>
+
+  <script>
+    // Simulate loading, then redirect to home
+    setTimeout(() => {
+      window.location.href = "home.html"; // Replace with actual home page path
+    }, 4000); // 4 seconds
+  </script>
+</body>
+</html>

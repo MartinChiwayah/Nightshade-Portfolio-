@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightShade | Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      background: linear-gradient(135deg, #000000, #0a0a0a);
+      color: #00ffee;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.1em;
+      color: #c0fefe;
+      opacity: 0.8;
+    }
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+      padding: 0 10px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .project-card {
+      background-color: rgba(10, 10, 10, 0.95);
+      border: 1px solid #00ffee88;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 20px #00ffee44;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px) scale(1.02);
+      box-shadow: 0 0 25px #00ffeecc;
+    }
+
+    .project-card h3 {
+      margin-top: 0;
+      color: #00ffee;
+      font-size: 1.5em;
+    }
+
+    .project-card p {
+      color: #c0fefe;
+      font-size: 0.95em;
+      margin: 10px 0 15px;
+    }
+
+    .tags {
+      font-size: 0.85em;
+      color: #00aaff;
+      margin-bottom: 10px;
+    }
+
+    .project-links a {
+      text-decoration: none;
+      margin-right: 10px;
+      color: #00ffee;
+      border: 1px solid #00ffee;
+      padding: 6px 10px;
+      border-radius: 4px;
+      transition: background 0.3s;
+      font-size: 0.9em;
+    }
+
+    .project-links a:hover {
+      background-color: #00ffee;
+      color: #000;
+    }
+
+    .back-btn {
+      display: block;
+      margin: 40px auto 0;
+      text-align: center;
+      width: fit-content;
+      color: #00ffee;
+      text-decoration: none;
+      border: 1px solid #00ffee;
+      padding: 10px 20px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background-color: #00ffee;
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>NightShade Projects</h1>
+    <p>Digital Realms Forged in Code</p>
+  </header>
+
+  <section class="projects-grid">
+    <div class="project-card">
+      <h3>Project Overdrive</h3>
+      <p>A fast-paced cyberpunk racing game built with Unity and C#.</p>
+      <div class="tags">Unity • C# • Game Design</div>
+      <div class="project-links">
+        <a href="#">GitHub</a>
+        <a href="#">Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Code Forge</h3>
+      <p>A futuristic IDE built with Electron for custom scripting engines.</p>
+      <div class="tags">JavaScript • Electron • Node.js</div>
+      <div class="project-links">
+        <a href="#">GitHub</a>
+        <a href="#">Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>Dark Sentinel</h3>
+      <p>Top-down rogue-lite survival game with procedurally generated maps.</p>
+      <div class="tags">Godot • GDScript • Pixel Art</div>
+      <div class="project-links">
+        <a href="#">GitHub</a>
+        <a href="#">Demo</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <h3>TerminalX</h3>
+      <p>Web-based hacker-themed terminal simulator with CLI features.</p>
+      <div class="tags">HTML • CSS • JavaScript</div>
+      <div class="project-links">
+        <a href="#">GitHub</a>
+        <a href="#">Demo</a>
+      </div>
+    </div>
+  </section>
+
+  <a class="back-btn" href="home.html">← Back to Home</a>
+</body>
+</html>

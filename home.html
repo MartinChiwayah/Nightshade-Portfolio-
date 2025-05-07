@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NightShade | Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      font-family: 'Orbitron', sans-serif;
+      overflow: hidden;
+    }
+
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #050505, #0e0e0e);
+      z-index: -1;
+    }
+
+    header {
+      padding: 20px;
+      text-align: center;
+      background-color: rgba(0, 0, 0, 0.8);
+      border-bottom: 1px solid #111;
+      z-index: 1;
+      position: relative;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 10px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #00ffee;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+      transform: scale(1.1);
+    }
+
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 40px 20px;
+      text-align: center;
+      height: calc(100vh - 120px);
+      animation: fadeIn 2s ease-in-out;
+      z-index: 1;
+      position: relative;
+    }
+
+    .hero h1 {
+      font-size: 12vw;
+      margin: 0;
+      color: #00ffee;
+      transition: transform 0.4s ease;
+    }
+
+    .hero h1:hover {
+      transform: scale(1.05) rotate(-1deg);
+    }
+
+    .hero p {
+      font-size: 5vw;
+      color: #00aaff;
+      max-width: 700px;
+      margin-top: 1em;
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 5em;
+      }
+      .hero p {
+        font-size: 1.5em;
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+<body>
+  <div id="particles-js"></div>
+
+  <audio id="background-music" loop autoplay muted>
+    <source src="https://www.bensound.com/bensound-music/bensound-epic.mp3" type="audio/mp3" />
+    Your browser does not support the audio element.
+  </audio>
+  
+  <script>
+    // Wait for the audio to be ready before unmuting it
+    window.addEventListener('load', function () {
+      var audio = document.getElementById('background-music');
+      audio.muted = false; // Unmute the audio after page loads
+    });
+  </script>  
+
+  <header>
+    <h2>NightShade</h2>
+    <nav>
+      <a href="home.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="contact.html">Contact</a>
+      <a href="skilltree.html">Skills</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>NightShade</h1>
+    <p>Emperor of Code & Controller of Realms</p>
+  </section>
+  
+
+  <!-- Load Particles.js -->
+  <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      particles: {
+        number: { value: 80 },
+        color: { value: "#00ffee" },
+        shape: { type: "circle" },
+        opacity: { value: 0.5 },
+        size: { value: 3 },
+        line_linked: {
+          enable: true,
+          distance: 150,
+          color: "#00ffee",
+          opacity: 0.4,
+          width: 1
+        },
+        move: {
+          enable: true,
+          speed: 2,
+          direction: "none",
+          out_mode: "out"
+        }
+      },
+      interactivity: {
+        events: {
+          onhover: { enable: true, mode: "repulse" },
+          onclick: { enable: true, mode: "push" }
+        },
+        modes: {
+          repulse: { distance: 100 },
+          push: { particles_nb: 4 }
+        }
+      },
+      retina_detect: true
+    });
+  </script>
+</body>
+</html>
